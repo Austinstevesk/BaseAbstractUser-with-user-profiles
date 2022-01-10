@@ -10,8 +10,6 @@ from django.db.models.signals import post_save
 # Create your models here.
 
 
-
-
 class CustomUserManager(BaseUserManager):
 
     #Create user function
@@ -59,7 +57,7 @@ class User(AbstractBaseUser):
     is_superuser = models.BooleanField(default=False)
 
 
-    USERNAME_FIELD = 'email'
+    USERNAME_FIELD = 'email' or 'phone'
 
     objects = CustomUserManager()
 
